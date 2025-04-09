@@ -1,0 +1,32 @@
+Programul meu presupune prelucrarea de imagini .ppm sau .pgm, de tip P2, P3,
+P5 sau P6, fie ele text/binar sau greyscale/color, prin intermediul unor
+comenzi standard introduse la tastatura. Astfel, daca se introduce comanda
+"LOAD", citesc calea catre imaginea data, si o voi deschide ca text, urmand
+ulterior sa o inchid si sa o deschid ca fisier binar pentru a putea citi din
+aceasta, daca este cazul. Pentru comanda "SELECT", se va verifica in primul
+rand parametrul care urmeaza dupa comanda, adica "ALL" sau "x1, y1, x2, y2".
+Daca este "ALL" se va selecta intreaga matrice(poza), daca nu, se va selecta
+doar partea ceruta prin cei 4 indici, in cazul in care acestia sunt valizi.
+Pentru comanda "HISTOGRAM", se vor citi x si y, numarul maxim de stelute
+admis si y, numarul de intervale "bin-uri" dorite, putere a numarului 2.
+Urmeaza afisarea histogramei imaginii, prin intermediul simbolului "*",
+inainte fiind evidentiat numarul de stelute aferent fiecarui interval.
+Comanda "EQUALIZE" realizeaza un vector de frecventa pentru elementele
+matricii si le aplica formula data in enunt. Comanda "ROTATE" vine
+insotita de un parametru care reprezinta unghiul la care se va realiza
+rotirea, acesta este verificat sa fie multiplu de 90 de grade si intre valorile
+-360 si 360, dupa care se va realiza rotirea la unghiul corespunzator, fie a
+selectiei, fie a intregii matrici, in functie de cazul dat. Comanda "CROP"
+taie din intreaga matrice(poza), selectia realizata anterior, astfel, selectia
+devenind noua matrice intreaga. Functia "APPLY", urmata de unul dintre cei 4
+parametrii posibili: "EDGE", "BLUR", "GAUSSIAN_BLUR", si "SHARPEN", ii aplica
+pe toata matricea, folosind formulele aferente fiecarui caz. Functia "SAVE",
+citeste dupa ea numele si calea unde se doreste a fi salvat fisierul, fiind
+urmata in unele cazuri de parametrul "ascii", care indica ca se doreste a se
+salva sub forma text, in caz contrar, se va salva in format binar. In final,
+comanda "EXIT" are ca rol marcarea finalului inlantuirii de comenzi, iar aici
+programul va verifica daca au fost dealocate dinamic matricile folosite.
+In cazul in care comanda introdusa nu este una din cele mentionate anterior
+sau are parametrii gresiti, se va afisa mesajul de "Invalid command".
+Pe parcursul programului sunt folosite diverse functii ce au rolul de a
+simplifica intelegerea codului si de a eficientiza procesul.
